@@ -15,3 +15,14 @@ ALTER TABLE member2 MODIFY COLUMN nickname varchar(100);
 
 -- 컬럼 이름 변경
 ALTER TABLE member2 CHANGE COLUMN nickname nick varchar(45);
+
+-- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
+ALTER TABLE member2 drop COLUMN nick;
+
+-- row 삭제 : DELETE사용
+
+select *
+from question;
+
+
+	
