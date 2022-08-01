@@ -55,7 +55,7 @@ where 1=1
 AND name = ""
 ;
 
-
+drop table airLanguage_member;
 
 
 
