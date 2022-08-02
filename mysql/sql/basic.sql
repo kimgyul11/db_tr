@@ -6,7 +6,7 @@ use suwon;
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE member2 ADD COLUMN nickname VARCHAR(45);
+ALTER TABLE answer ADD COLUMN like_hit VARCHAR(45);
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 
@@ -17,7 +17,8 @@ ALTER TABLE member2 MODIFY COLUMN nickname varchar(100);
 ALTER TABLE member2 CHANGE COLUMN nickname nick varchar(45);
 
 -- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
-ALTER TABLE member2 drop COLUMN nick;
+ALTER TABLE answer drop COLUMN answer_title;
+
 
 -- row 삭제 : DELETE사용
 
