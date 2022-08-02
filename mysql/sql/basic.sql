@@ -1,12 +1,24 @@
 -- suwon을 사용 하겠다. 상단에서 한번만 사용해
 use suwon;
 
+CREATE TABLE IF NOT EXISTS `suwon`.`answer_like` (
+  `seq` INT NOT NULL AUTO_INCREMENT,
+  `userID` VARCHAR(45) NULL,
+  `answer_seq` INT NOT NULL,
+  PRIMARY KEY (`seq`),
+  INDEX `fk_like21_answer1_idx` (`answer_seq` ASC) VISIBLE,
+  CONSTRAINT `fk_like21_answer1`
+    FOREIGN KEY (`answer_seq`)
+    REFERENCES `suwon`.`answer` (`seq`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
 -- 전체 컬럼 조회
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE answer ADD COLUMN like_hit VARCHAR(45);
+ALTER TABLE answer ADD COLUMN question_seq int;
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 
@@ -14,10 +26,10 @@ ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 ALTER TABLE member2 MODIFY COLUMN nickname varchar(100);
 
 -- 컬럼 이름 변경
-ALTER TABLE member2 CHANGE COLUMN nickname nick varchar(45);
+ALTER TABLE answer_like CHANGE COLUMN nickname nick varchar(45);
 
 -- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
-ALTER TABLE answer drop COLUMN answer_title;
+ALTER TABLE answer drop COLUMN answer_like;
 
 
 -- row 삭제 : DELETE사용
@@ -56,7 +68,7 @@ where 1=1
 AND name = ""
 ;
 
-drop table airLanguage_member;
+drop table answer_like;
 
 
 
