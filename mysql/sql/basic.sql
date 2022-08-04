@@ -20,7 +20,7 @@ ENGINE = InnoDB;
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE cc ADD COLUMN country varchar(45);
+ALTER TABLE answer_like ADD COLUMN time_like datetime;
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 
@@ -31,7 +31,7 @@ ALTER TABLE question MODIFY COLUMN writetime datetime;
 ALTER TABLE answer_like CHANGE COLUMN nickname nick varchar(45);
 
 -- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
-ALTER TABLE answer drop COLUMN answer_like;
+ALTER TABLE answer_like drop COLUMN like_time;
 
 
 -- row 삭제 : DELETE사용
