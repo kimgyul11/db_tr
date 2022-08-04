@@ -20,7 +20,7 @@ ENGINE = InnoDB;
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE answer_like ADD COLUMN time_like datetime;
+ALTER TABLE airLanguage_member ADD COLUMN lean_language varchar(45);
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 
@@ -76,7 +76,6 @@ drop table cc;
 
 
 
-
 INSERT INTO cc(
 	seq
     ,cc_Name
@@ -89,6 +88,8 @@ VALUES(
     ,"1"
     ,"2"
 );
+
+-- join 두가지만 기억하자08-04
 
 
 
