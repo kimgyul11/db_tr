@@ -28,7 +28,7 @@ ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 ALTER TABLE question MODIFY COLUMN writetime datetime;
 
 -- 컬럼 이름 변경
-ALTER TABLE answer_like CHANGE COLUMN nickname nick varchar(45);
+ALTER TABLE cc CHANGE COLUMN nomber nember varchar(45);
 
 -- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
 ALTER TABLE answer_like drop COLUMN like_time;

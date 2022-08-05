@@ -1,12 +1,11 @@
 use suwon;
-
+-- 공통코드
 select
 	a.seq
     ,a.ccg_groupname
-    ,b.nomber
+    ,b.seq
     ,b.cc_Name
-from ccg a
-
+from ccg a 
 join cc b on b.ccg_seq = a.seq
 ;
 
@@ -16,18 +15,15 @@ select*from airLanguage_member where user_id = "KORKIM11" and user_pw="12341234!
 ;
 
 
--- 질문목록
+-- 질문등록
 select
-	a.seq
-    ,a.title
-    ,a.content
-    ,a.userID
-    ,b.content
-    ,b.user_id
-    
-    
-from question a
-join answer b on b.question_seq = a.seq
+	seq
+    ,title
+    ,content
+    ,userID
+    ,writetime
+    ,language_select
+from question 
 ;
 
 
@@ -35,4 +31,9 @@ join answer b on b.question_seq = a.seq
 -- 답변목록
 
 
--- 답변 댓글목록
+
+
+-- 게시글 조회
+
+
+
