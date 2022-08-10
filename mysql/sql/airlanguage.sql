@@ -39,7 +39,7 @@ select
     ,a.content
     ,a.userID
 from question a
-where a.seq = "1"    
+where a.seq = 1    
 ;
 
 
@@ -52,17 +52,18 @@ select
     ,a.like_hit
     ,a.question_seq
 from answer a
-where question_seq ="1"
+where question_seq =1
 ;
 
--- 답변목록.댓글    
+-- 질문 상세.답변목록.댓글    
 select
 	a.seq
     ,a.user_ID
     ,a.comment
     ,a.commet_write_time
+    ,a.answer_seq
 from answer_comment a
-where answer_seq = "1"
+where answer_seq = 1
 ;
 
 -- 단어로 검색
@@ -70,8 +71,11 @@ select
 	a.title
     ,a.content
     ,userID
-from question a
-where a.title like"%한국%" and language_select ="1"     
+from 
+	question a
+where 1=1 
+	and a.title like"%한국%" 
+	and language_select ="1"     
 ;
 
     
@@ -79,11 +83,14 @@ where a.title like"%한국%" and language_select ="1"
 insert 	into question(
 	title
     ,content
+    ,language_select
 )
 value(
 	"hello"
     ""
+    "1"
 )
+;
 
 
 
