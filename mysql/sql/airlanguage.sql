@@ -76,7 +76,14 @@ where a.title like"%한국%" and language_select ="1"
 
     
 -- 질문 등록 
--- insert 를 사용합니다..	
+insert 	into question(
+	title
+    ,content
+)
+value(
+	"hello"
+    ""
+)
 
 
 
