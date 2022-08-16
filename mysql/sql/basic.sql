@@ -20,7 +20,7 @@ ENGINE = InnoDB;
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE airLanguage_member ADD COLUMN lean_language varchar(45);
+ALTER TABLE question ADD COLUMN lastModTime datetime;
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 

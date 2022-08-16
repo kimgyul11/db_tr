@@ -66,6 +66,36 @@ from answer_comment a
 where answer_seq = 1
 ;
 
+-- 질문 작성일 순
+select
+	a.seq
+    ,a.title
+    ,a.content
+    ,a.userID
+    ,a.writetime
+    ,b.answer_content
+    ,b.answer_userID
+from question a
+join answer b on b.question_seq =  a.seq
+order by a.writetime
+;
+
+-- 서브쿼리
+select
+	a.seq
+    ,a.title
+    ,a.content
+    ,a.userID
+    ,a.writetime
+    ,b.answer_content
+    ,b.answer_userID
+    ,(select user_level from airLanguage_member aa where aa.seq = a.userID ) as question_user_level
+from question a
+join answer b on b.question_seq =  a.seq
+order by a.writetime
+;
+
+
 -- 단어로 검색
 select
 	a.title
@@ -77,6 +107,9 @@ where 1=1
 	and a.title like"%한국%" 
 	and language_select ="1"     
 ;
+
+
+
 
     
 -- 질문 등록 
