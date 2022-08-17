@@ -110,6 +110,32 @@ where 1=1
 
 
 
+-- union
+-- 각각의 셀렉의 갯수가 같아야함,공통의 데이터만있어야한다, 공통의 데이터가 없으면 한쪽을 비워둔다.
+-- 집계할때 사용한다.예6,7,8월가입자 뽑을때
+-- union 과 union all 가급적이면 union all을 사용하는게 좋다. 속도가 더 빠르다...
+select
+	a.title
+    ,a.content
+    ,userID
+from 
+	question a
+where 1=1 
+	and a.content like"%한국말%" 
+	and language_select ="1" 
+union
+select
+	a.title
+    ,a.content
+    ,userID
+from 
+	question a
+where 1=1 
+	and a.content like"%비용%" 
+	and language_select ="1"     
+;
+
+
 
     
 -- 질문 등록 
