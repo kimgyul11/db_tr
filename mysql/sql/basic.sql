@@ -1,21 +1,8 @@
 -- suwon을 사용 하겠다. 상단에서 한번만 사용해
 use suwon;
 
-CREATE TABLE IF NOT EXISTS `suwon`.`cc` (
-  `seq` INT NOT NULL AUTO_INCREMENT,
-  `cc_Name` VARCHAR(45) NULL,
-  `useNY` VARCHAR(45) NULL,
-  `nomber` VARCHAR(45) NULL,
-  `ccg_seq` INT NOT NULL,
-  INDEX `fk_cc_ccg1_idx` (`ccg_seq` ASC) VISIBLE,
-  PRIMARY KEY (`seq`),
-  CONSTRAINT `fk_cc_ccg1`
-    FOREIGN KEY (`ccg_seq`)
-    REFERENCES `suwon`.`ccg` (`seq`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+-- 테이블 삭제
+drop table infrMemberUploaded;
 -- 전체 컬럼 조회
 select * from member;
 

@@ -1,5 +1,17 @@
 use suwon;
-
+CREATE TABLE IF NOT EXISTS `suwon`.`questionImgUploaded` (
+  `seq` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(45) NULL,
+  `defaultNy` VARCHAR(45) NULL,
+  `sort` VARCHAR(45) NULL,
+  `originalName` VARCHAR(45) NULL,
+  `uuidName` VARCHAR(45) NULL,
+  `ext` VARCHAR(45) NULL,
+  `size` VARCHAR(45) NULL,
+  `delNy` VARCHAR(45) NULL,
+  `pseq` VARCHAR(45) NULL,
+  PRIMARY KEY (`seq`))
+ENGINE = InnoDB;
 
 -- 공통코드
 select
