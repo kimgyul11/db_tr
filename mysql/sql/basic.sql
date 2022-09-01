@@ -63,7 +63,7 @@ drop table cc;
 
 
 
-INSERT INTO cc(
+INSERT INTO ccg(
 	seq
     ,cc_Name
     ,useNY
