@@ -1,17 +1,4 @@
 use suwon;
-CREATE TABLE IF NOT EXISTS `suwon`.`questionImgUploaded` (
-  `seq` INT NOT NULL AUTO_INCREMENT,
-  `type` VARCHAR(45) NULL,
-  `defaultNy` VARCHAR(45) NULL,
-  `sort` VARCHAR(45) NULL,
-  `originalName` VARCHAR(45) NULL,
-  `uuidName` VARCHAR(45) NULL,
-  `ext` VARCHAR(45) NULL,
-  `size` VARCHAR(45) NULL,
-  `delNy` VARCHAR(45) NULL,
-  `pseq` VARCHAR(45) NULL,
-  PRIMARY KEY (`seq`))
-ENGINE = InnoDB;
 
 -- 공통코드
 select
@@ -106,6 +93,14 @@ from question a
 join answer b on b.question_seq =  a.seq
 order by a.writetime
 ;
+
+-- 코드그룹 코드 묶기
+select
+	a.*
+    ,(select count(ccg_seq) from cc aa where aa.ccg_seq = a.ccgSeq ) as countCCG
+from ccg a
+;
+	
 
 
 -- 단어로 검색
