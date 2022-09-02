@@ -7,15 +7,16 @@ drop table infrMemberUploaded;
 select * from member;
 
 -- 컬럼 추가
-ALTER TABLE question ADD COLUMN lastModTime datetime;
+ALTER TABLE ccg ADD COLUMN formdate datetime;
 
 ALTER TABLE member2 ADD COLUMN nameEng VARCHAR(45) AFTER name;
 
--- 컬럼 변경
-ALTER TABLE question MODIFY COLUMN writetime datetime;
+-- 컬럼 타입변경
+ALTER TABLE ccg MODIFY COLUMN writetime datetime;
+
 
 -- 컬럼 이름 변경
-ALTER TABLE answer CHANGE COLUMN like_hit answer_likehit varchar(45);
+ALTER TABLE ccg CHANGE COLUMN seq ccg_seq varchar(45);
 
 -- 컬럼 삭제 : 보통 삭제 전에 파일 복사해놓는다
 ALTER TABLE answer_like drop COLUMN like_time;
@@ -59,9 +60,36 @@ AND name = ""
 
 drop table cc;
 
+select 
+a.*
+,b.ccg_seq
+,count(ccg_seq)
+from ccg a
+join cc b on a.ccgSeq = b.ccg_seq
+group by a.ccgSeq 
+;
+
+-- 연습9월2일
+SELECT
+ a.*
+ ,c.cc_name
+FROM airLanguage_member a
+LEFT JOIN cc  c ON c.cc_name = a.lean_language
+;
 
 
-
+SELECT
+ c.id,
+ c.first_name,
+ c.last_name,
+ s.date AS sale,
+ b.name AS book,
+ b.genre
+FROM customers AS c
+LEFT JOIN sales AS s
+   ON c.id = s.customer_id
+LEFT JOIN books AS b
+    ON s.book_id = b.id;
 
 INSERT INTO ccg(
 	seq
