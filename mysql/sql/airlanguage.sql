@@ -2,12 +2,12 @@ use suwon;
 
 -- 공통코드
 select
-	a.seq
+	a.ccgSeq
     ,a.ccg_groupname
     ,b.seq
     ,b.cc_Name
 from ccg a 
-join cc b on b.ccg_seq = a.seq
+join cc b on b.ccg_seq = a.ccgSeq
 ;
 
 -- 로그인

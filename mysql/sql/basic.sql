@@ -72,9 +72,11 @@ group by a.ccgSeq
 -- 연습9월2일
 SELECT
  a.*
- ,c.cc_name
+ ,g.cc_name
 FROM airLanguage_member a
-LEFT JOIN cc  c ON c.cc_name = a.lean_language
+LEFT JOIN ccg  c ON c.ccgSeq = a.lean_language
+Left join cc g on g.ccg_Seq = c.ccgSeq
+where ccg_seq
 ;
 
 
