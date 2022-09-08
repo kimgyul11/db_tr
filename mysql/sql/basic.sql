@@ -94,13 +94,14 @@ LEFT JOIN books AS b
     ON s.book_id = b.id;
 
 INSERT INTO ccg(
-	seq
-    ,cc_Name
+	ccgSeq
+    ,ccg_groupname
     ,useNY
-    ,ccg_seq
+    ,ccg_nomber
+    ,DelNy
 )
 VALUES(
-	4
+	5
 	,"GIRL"
     ,"1"
     ,"2"
