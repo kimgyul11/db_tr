@@ -79,6 +79,16 @@ Left join cc g on g.ccg_Seq = c.ccgSeq
 where ccg_seq
 ;
 
+SELECT -- 질문창 리스트쿼리
+	a.content
+    ,a.writetime
+    ,b.user_id
+    ,c.cc_name    
+    FROM question a
+    join airLanguage_member b on a.userId = b.memberSeq
+    join cc c on c.ccSeq = a.language_select
+    ;
+    
 
 SELECT
  c.id,
