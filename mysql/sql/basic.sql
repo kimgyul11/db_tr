@@ -117,6 +117,29 @@ VALUES(
     ,"2"
 );
 
+SELECT
+	b.ccSeq
+	,b.cc_name
+	,b.cc_nameEng
+	,b.cc_number
+	,b.ccg_seq
+	,b.cc_delNy
+	,b.cc_useNy
+	,a.ccgSeq
+	,a.ccg_groupname
+    ,a.delNy
+from ccg a
+join cc b on b.ccg_seq = a.ccg_nomber
+WHERE 1=1
+
+;	 
+SELECT
+	a.ccgSeq
+    a.ccg_groupname
+    
+     
+	
+;
 
 
 
