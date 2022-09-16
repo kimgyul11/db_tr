@@ -90,18 +90,6 @@ SELECT -- 질문창 리스트쿼리
     ;
     
 
-SELECT
- c.id,
- c.first_name,
- c.last_name,
- s.date AS sale,
- b.name AS book,
- b.genre
-FROM customers AS c
-LEFT JOIN sales AS s
-   ON c.id = s.customer_id
-LEFT JOIN books AS b
-    ON s.book_id = b.id;
 
 INSERT INTO ccg(
 	ccgSeq
@@ -131,17 +119,38 @@ SELECT
 from ccg a
 join cc b on b.ccg_seq = a.ccg_nomber
 WHERE 1=1
-
+ 
 ;	 
+
+select
+			a.ccSeq
+			,a.cc_name
+			,a.cc_nameEng
+			,a.cc_number
+			,a.ccg_seq
+			,a.cc_delNy
+			,a.cc_useNy
+			,b.ccg_groupname
+		from cc a
+		join ccg b 
+		WHERE 1=1
+        group by ccg_groupname
+        ;
+       
+		
 SELECT
-	a.ccgSeq
-    a.ccg_groupname
-    
-     
-	
-;
-
-
+			a.ccSeq
+			,a.cc_name
+			,a.cc_nameEng
+			,a.cc_number
+			,a.ccg_seq
+			,a.cc_useNy
+			,a.cc_delNy
+            ,b.ccgSeq
+            ,b.ccg_groupname
+		FROM cc a
+		join ccg b on a.ccg_seq = ccgSeq
+        ;
 
 
 	

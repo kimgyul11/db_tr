@@ -4,8 +4,8 @@ use suwon;
 select
 	a.ccgSeq
     ,a.ccg_groupname
-    ,b.seq
-    ,b.cc_Name
+    ,b.ccg_seq
+    ,b.cc_name
 from ccg a 
 join cc b on b.ccg_seq = a.ccgSeq
 ;
