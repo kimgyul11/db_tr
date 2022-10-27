@@ -9,9 +9,9 @@ select
     ,a.userID
     ,a.language_select
     ,a.writetime
-FROM questoin a
-WHERE
-	userID = "1";
+FROM question a
+WHERE 1=1
+AND a.userID = 1;
     
 -- 테이블 삭제
 drop table infrMemberUploaded;
