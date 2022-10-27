@@ -1,6 +1,18 @@
 -- suwon을 사용 하겠다. 상단에서 한번만 사용해
 use suwon;
 
+-- 리스트 조회
+select
+	count(*)
+	,a.questionSeq
+    ,a.content
+    ,a.userID
+    ,a.language_select
+    ,a.writetime
+FROM questoin a
+WHERE
+	userID = "1";
+    
 -- 테이블 삭제
 drop table infrMemberUploaded;
 -- 전체 컬럼 조회
